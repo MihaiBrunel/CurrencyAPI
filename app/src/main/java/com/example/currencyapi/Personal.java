@@ -29,6 +29,7 @@ public class Personal {
     }
 
     public static Date getTimeUpdate() throws IOException, JSONException{
+        //commment
         HttpRequest conn = new HttpRequest(url);
         JSONObject exchangeRates = new JSONObject();
         exchangeRates = conn.prepare(HttpRequest.Method.GET).sendAndReadJSON();
