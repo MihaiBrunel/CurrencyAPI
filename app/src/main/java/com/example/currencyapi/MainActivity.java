@@ -23,23 +23,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+
         Button button = (Button) findViewById(R.id.button);
         final TextView textView = (TextView) findViewById(R.id.text);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 try {
-                    Personal currency = new Personal("USD");
-                    Double d = Personal.getData("GBP");
-
-                    textView.setText(d.toString());
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-                } catch (JSONException e) {
-
-                    e.printStackTrace();
-                }catch (Exception e){
+                    Personal currency = new Personal("RON");
+                    currency = new Personal("USD");
+                    Double value = currency.getCurrency("GBP");
+                    textView.setText(value.toString());
+                }
+                catch (Exception e){
 
                 }
             }
