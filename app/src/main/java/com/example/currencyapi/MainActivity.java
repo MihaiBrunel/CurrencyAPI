@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 // Code here executes on main thread after user presses button
                 try {
                     Personal currency = new Personal("RON");
-                    currency = new Personal("USD");
                     Double value = currency.getCurrency("GBP");
                     textView.setText(value.toString());
                 }
